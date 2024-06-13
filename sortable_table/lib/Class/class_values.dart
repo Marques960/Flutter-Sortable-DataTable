@@ -1,8 +1,8 @@
 class Producao {
     final String name1;
     final String name2;
-    final int  value1;
-    final int value2;
+    final String  value1;
+    final String value2;
 
     Producao({
       required this.name1,

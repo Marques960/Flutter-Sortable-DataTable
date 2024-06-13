@@ -1,5 +1,5 @@
 //ignorances
-// ignore_for_file: prefer_const_literals_to_create_immutables 
+// ignore_for_file: prefer_const_literals_to_create_immutables, non_constant_identifier_names 
 // ignore_for_file: unused_local_variable
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file:
@@ -9,6 +9,8 @@
 
 //imports
 import 'package:flutter/material.dart';
+import 'package:sortable_table/Class/class_values.dart';
+import 'package:sortable_table/Lists/list.dart';
 
 class TablePage extends StatefulWidget {
   const TablePage({super.key});
@@ -20,6 +22,33 @@ class TablePage extends StatefulWidget {
 class _TableState extends State<TablePage> {
 
   //var's out of the widget
+    //list of producao
+    List<Producao> producao = [];
+
+
+  //method to associte data with the class
+  void method_assocation() {
+
+    //clear the list
+    producao.clear();
+
+    Producao produca = Producao(
+      name1: names.join(','),
+      name2: subjects.join(','),
+      value1: list_numerbs1.join(','),
+      value2: list_numerbs2.join(','),
+    );
+
+    //add values to the list
+    producao.add(produca);
+  }
+
+  //initialize method/var's
+  @override
+  void initState() {
+    super.initState();
+    method_assocation();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -99,6 +128,59 @@ class _TableState extends State<TablePage> {
                           ],
                         ),
                         //data
+                        for(var produca in producao)
+                          TableRow(
+                            children: [
+                              //name 1
+                              TableCell(
+                                verticalAlignment: TableCellVerticalAlignment.middle,
+                                child: Padding(
+                                  padding: EdgeInsets.all(8),
+                                  child: Text(
+                                    produca.name1,
+                                    style: tableStyle,
+                                    textAlign: TextAlign.center,
+                                  ), 
+                                ),
+                              ),
+                              //name 2
+                              TableCell(
+                                verticalAlignment: TableCellVerticalAlignment.middle,
+                                child: Padding(
+                                  padding: EdgeInsets.all(8),
+                                  child: Text(
+                                    produca.name2,
+                                    style: tableStyle,
+                                    textAlign: TextAlign.center,
+                                  ), 
+                                ),
+                              ),
+                              //value 1
+                              TableCell(
+                                verticalAlignment: TableCellVerticalAlignment.middle,
+                                child: Padding(
+                                  padding: EdgeInsets.all(8),
+                                  child: Text(
+                                    produca.value1,
+                                    style: tableStyle,
+                                    textAlign: TextAlign.center,
+                                  ), 
+                                ),
+                              ),
+                              //value 2
+                              TableCell(
+                                verticalAlignment: TableCellVerticalAlignment.middle,
+                                child: Padding(
+                                  padding: EdgeInsets.all(8),
+                                  child: Text(
+                                    produca.value2,
+                                    style: tableStyle,
+                                    textAlign: TextAlign.center,
+                                  ), 
+                                ),
+                              ),
+                            ],
+                          ),
                       ],
                     ),
                   ),
