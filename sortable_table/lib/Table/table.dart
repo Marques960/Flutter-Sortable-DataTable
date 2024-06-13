@@ -11,6 +11,7 @@
 import 'package:flutter/material.dart';
 import 'package:sortable_table/Class/class_values.dart';
 import 'package:sortable_table/Lists/list.dart';
+import 'package:sortable_table/Styles/table_style.dart';
 
 class TablePage extends StatefulWidget {
   const TablePage({super.key});
@@ -32,15 +33,18 @@ class _TableState extends State<TablePage> {
     //clear the list
     producao.clear();
 
-    Producao produca = Producao(
-      name1: names.join(','),
-      name2: subjects.join(','),
-      value1: list_numerbs1.join(','),
-      value2: list_numerbs2.join(','),
-    );
-
-    //add values to the list
-    producao.add(produca);
+    int length = names.length;
+    //for cicle to set the each value to one column
+    for (int i = 0; i < length; i++) {
+      Producao produca = Producao(
+        name1: names[i].toString(),
+        name2: subjects[i].toString(),
+        value1: list_numerbs1[i].toString(),
+        value2: list_numerbs2[i].toString(),
+      );
+      //add values to the list
+      producao.add(produca);
+    } 
   }
 
   //initialize method/var's
