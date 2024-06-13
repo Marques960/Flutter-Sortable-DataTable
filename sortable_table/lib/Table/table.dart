@@ -29,7 +29,6 @@ class _TableState extends State<TablePage> {
     double screenHeight = MediaQuery.of(context).size.height;
 
     //VAR'S
-    final columns = ['First Name', 'Last Name', 'Age'];
 
     return Scaffold( 
       backgroundColor: Colors.white10,
