@@ -1,10 +1,10 @@
 //ignorances
-// ignore_for_file: prefer_const_literals_to_create_immutables, non_constant_identifier_names, avoid_print, sized_box_for_whitespace
+// ignore_for_file: prefer_const_literals_to_create_immutables 
 // ignore_for_file: unused_local_variable
 // ignore_for_file: prefer_const_constructors
-// ignore_for_file:
-// ignore_for_file:
-// ignore_for_file:
+// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: avoid_print
+// ignore_for_file: sized_box_for_whitespace
 // ignore_for_file:
 
 //imports
