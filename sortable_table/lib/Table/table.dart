@@ -1,5 +1,5 @@
 //ignorances
-// ignore_for_file: prefer_const_literals_to_create_immutables, non_constant_identifier_names 
+// ignore_for_file: prefer_const_literals_to_create_immutables, non_constant_identifier_names, avoid_print 
 // ignore_for_file: unused_local_variable
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file:
@@ -47,11 +47,36 @@ class _TableState extends State<TablePage> {
     } 
   }
 
+  //order method 
+  void SortedValuesInt() {
+    // 50 - 0
+    list_numerbs1.sort();
+    print(list_numerbs1.reversed);
+
+    //0-50
+    list_numerbs1.sort((a, b) => b.compareTo(a));
+    print(list_numerbs1.reversed);
+  }
+
+  void SortedStr() {
+    //a - z
+    names.sort((a, b) => a.compareTo(b));
+    print(names);
+
+    //z - a
+    names.sort((a, b) => b.compareTo(a));
+    print(names);  
+  }
+
+
+
   //initialize method/var's
   @override
   void initState() {
     super.initState();
     method_assocation();
+    SortedValuesInt();
+    SortedStr();
   }
 
   @override
@@ -109,24 +134,69 @@ class _TableState extends State<TablePage> {
                             ),
                           ),
                           children: [
-                            //cicle for to give header names to the table
-                            for (var header in [
-                              "Name Nº1",
-                              "Name Nº2",
-                              "Name Nº3",
-                              "Name Nº4",
-                            ])
+                            //name 1
                             TableCell(
-                              verticalAlignment: TableCellVerticalAlignment.middle,
+                              verticalAlignment:
+                                  TableCellVerticalAlignment.middle,
+                              child: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    print("ok");
+                                  },
+                                  child: Text(
+                                    "Name 1",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            //name 2
+                            TableCell(
+                              verticalAlignment:
+                                  TableCellVerticalAlignment.middle,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
                                 child: Text(
-                                  header,
+                                  "Name 2",
                                   style: TextStyle(
                                     color: Colors.white,
                                   ),
                                   textAlign: TextAlign.center,
-                                ), 
+                                ),
+                              ),
+                            ),
+                            //value 1
+                            TableCell(
+                              verticalAlignment:
+                                  TableCellVerticalAlignment.middle,
+                              child: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: Text(
+                                  "Value 1",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ),
+                            //value 2
+                            TableCell(
+                              verticalAlignment:
+                                  TableCellVerticalAlignment.middle,
+                              child: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: Text(
+                                  "Value 2",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                             ),
                           ],
