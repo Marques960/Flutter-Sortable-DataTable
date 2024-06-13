@@ -47,7 +47,7 @@ class _TableState extends State<TablePage> {
     }
   }
 
-  //order method
+  //order method int (test)
   void SortedValuesInt() {
     // 50 - 0
     list_numerbs1.sort();
@@ -58,6 +58,7 @@ class _TableState extends State<TablePage> {
     print(list_numerbs1.reversed);
   }
 
+  //sorted value
   void sortedStr(String columnToSort) {
     setState(() {
       if (columnToSort == currentSortColumn) {
@@ -67,7 +68,7 @@ class _TableState extends State<TablePage> {
         isAscending = true;
       }
 
-      // Sort the producao list based on the specified column and order
+      // Sort the production based on the order
       producao.sort((a, b) {
         if (columnToSort == 'name1') {
           return isAscending
@@ -86,11 +87,12 @@ class _TableState extends State<TablePage> {
               ? int.parse(a.value2).compareTo(int.parse(b.value2))
               : int.parse(b.value2).compareTo(int.parse(a.value2));
         }
-        return 0; // Default case
+        return 0; // Default
       });
     });
   }
 
+  //order method str (test)
   void SortedStr1() {
     //a - z
     names.sort((a, b) => a.compareTo(b));
@@ -179,7 +181,8 @@ class _TableState extends State<TablePage> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.only(left: 20),
+                                          padding:
+                                              const EdgeInsets.only(left: 20),
                                           child: Text(
                                             "Name 1",
                                             style: TextStyle(
@@ -188,13 +191,18 @@ class _TableState extends State<TablePage> {
                                             textAlign: TextAlign.center,
                                           ),
                                         ),
-                                        SizedBox(width: 20,),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        //condition to display the icon
                                         if (currentSortColumn == 'name1')
                                           Padding(
                                             padding: EdgeInsets.only(right: 20),
                                             child: Icon(
                                               isAscending
+                                                  // a - z
                                                   ? Icons.arrow_upward
+                                                  //z - a
                                                   : Icons.arrow_downward,
                                               color: Colors.white,
                                               size: 18,
@@ -216,14 +224,37 @@ class _TableState extends State<TablePage> {
                                   child: Container(
                                     height: screenHeight / 18,
                                     color: Colors.transparent,
-                                    child: Center(
-                                      child: Text(
-                                        "Name 2",
-                                        style: TextStyle(
-                                          color: Colors.white,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 20),
+                                          child: Text(
+                                            "Name 2",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                            textAlign: TextAlign.center,
+                                          ),
                                         ),
-                                        textAlign: TextAlign.center,
-                                      ),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        //condition to display the icon
+                                        if (currentSortColumn == 'name2')
+                                          Padding(
+                                            padding: EdgeInsets.only(right: 20),
+                                            child: Icon(
+                                              isAscending
+                                                  // a - z
+                                                  ? Icons.arrow_upward
+                                                  //z - a
+                                                  : Icons.arrow_downward,
+                                              color: Colors.white,
+                                              size: 18,
+                                            ),
+                                          ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -239,18 +270,40 @@ class _TableState extends State<TablePage> {
                                   child: Container(
                                     height: screenHeight / 18,
                                     color: Colors.transparent,
-                                    child: Center(
-                                      child: Text(
-                                        "Value 1",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                        ),
-                                        textAlign: TextAlign.center,
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(left: 20),
+                                            child: Text(
+                                              "Value 1",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          SizedBox(width: 20,),
+                                        //condition to display the icon
+                                        if (currentSortColumn == 'value1')
+                                          Padding(
+                                            padding: EdgeInsets.only(right: 20),
+                                            child: Icon(
+                                              isAscending
+                                                  // a - z
+                                                  ? Icons.arrow_upward
+                                                  //z - a
+                                                  : Icons.arrow_downward,
+                                              color: Colors.white,
+                                              size: 18,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
+                              
                               //value 2
                               TableCell(
                                 verticalAlignment:
@@ -262,18 +315,40 @@ class _TableState extends State<TablePage> {
                                   child: Container(
                                     height: screenHeight / 18,
                                     color: Colors.transparent,
-                                    child: Center(
-                                      child: Text(
-                                        "Value 2",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                        ),
-                                        textAlign: TextAlign.center,
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(left: 20),
+                                            child: Text(
+                                              "Value 2",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          SizedBox(width: 20,),
+                                        //condition to display the icon
+                                        if (currentSortColumn == 'value2')
+                                          Padding(
+                                            padding: EdgeInsets.only(right: 20),
+                                            child: Icon(
+                                              isAscending
+                                                  // a - z
+                                                  ? Icons.arrow_upward
+                                                  //z - a
+                                                  : Icons.arrow_downward,
+                                              color: Colors.white,
+                                              size: 18,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
+                            
                             ],
                           ),
                           //data
